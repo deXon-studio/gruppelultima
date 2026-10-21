@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="description" content="Gruppa L’Ultima — Haute Coiffure in Wien, Wiener Neustadt, Tulln und Beograd. Individuelle Beratung, präziser Schnitt, Farbe, Pflege und Styling.">
+<meta name="theme-color" content="#070707">
+<meta property="og:title" content="Gruppa L’Ultima — Wien × Beograd">
+<meta property="og:description" content="Haute Coiffure in sechs Salons. Eine Kultur, zwei Städte.">
+<meta property="og:image" content="assets/wien-couture.webp">
+<link rel="preload" as="image" href="assets/wien-couture.webp">
+<style>
+@font-face{font-family:Cormorant;src:url("assets/fonts/cormorant-regular.ttf");font-weight:400;font-display:swap}
+@font-face{font-family:Cormorant;src:url("assets/fonts/cormorant-medium.ttf");font-weight:500;font-display:swap}
+@font-face{font-family:Cormorant;src:url("assets/fonts/cormorant-italic.ttf");font-style:italic;font-display:swap}
+@font-face{font-family:UInter;src:url("assets/fonts/inter-regular.ttf");font-weight:400;font-display:swap}
+@font-face{font-family:UInter;src:url("assets/fonts/inter-medium.ttf");font-weight:500;font-display:swap}
+@font-face{font-family:UInter;src:url("assets/fonts/inter-semibold.ttf");font-weight:600;font-display:swap}
+html{background:#070707;scroll-behavior:smooth}
+body{margin:0;background:#070707;color:#eeeae2;font-family:UInter,Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+a:hover{color:inherit}
+button{font:inherit;color:inherit}
+::selection{background:#f04b37;color:#070707}
+:focus-visible{outline:2px solid #f04b37;outline-offset:3px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+</style>
+</helmet>
+<div data-ul="root" style="position:relative;background:#070707;color:#eeeae2;font-family:UInter, Inter, system-ui, sans-serif;font-size:18px;line-height:1.6;overflow-x:clip">
+
+<svg aria-hidden="true" width="0" height="0" style="position:absolute;width:0;height:0">
+  <filter id="ul-liquid" x="-20%" y="-20%" width="140%" height="140%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.008 0.014" numOctaves="2" seed="4" result="n"></feTurbulence>
+    <feGaussianBlur in="n" stdDeviation="2" result="nb"></feGaussianBlur>
+    <feDisplacementMap in="SourceGraphic" in2="nb" scale="46" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+  </filter>
+</svg>
+
+<div aria-hidden="true" style="position:fixed;inset:0;z-index:950;pointer-events:none;opacity:.05;background-image:url(&quot;data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E&quot;)"></div>
+<div data-progress aria-hidden="true" style="position:fixed;left:0;right:0;top:0;height:2px;z-index:420;background:#f04b37;transform:scaleX(0);transform-origin:left;box-shadow:0 0 14px rgba(240,75,55,.7)"></div>
+<div data-cursor aria-hidden="true" style="position:fixed;left:0;top:0;width:38px;height:38px;margin:-19px 0 0 -19px;border-radius:50%;border:1px solid rgba(238,234,226,.75);z-index:960;pointer-events:none;mix-blend-mode:difference;opacity:0;transition:opacity .4s, width .45s cubic-bezier(.16,1,.3,1), height .45s cubic-bezier(.16,1,.3,1), margin .45s cubic-bezier(.16,1,.3,1), background-color .3s"></div>
+
+<!-- LOADER -->
+<sc-if value="{{ showLoader }}" hint-placeholder-val="{{ true }}">
+<div data-loader role="status" aria-label="Loading" style="position:fixed;inset:0;z-index:1000;background:#050505;display:grid;place-items:center">
+  <div style="width:min(760px,84vw)">
+    <div style="display:flex;justify-content:space-between;align-items:baseline;overflow:hidden;font-family:Cormorant, Georgia, serif;font-size:clamp(44px,7.5vw,112px);line-height:1.05;letter-spacing:-.02em">
+      <span data-load-word="l" style="display:inline-block">GRUPPA</span>
+      <span data-load-word="r" style="display:inline-block;font-style:italic">L’Ultima</span>
+    </div>
+    <div style="height:1px;background:rgba(238,234,226,.14);margin:30px 0 18px;overflow:hidden"><i data-load-bar style="display:block;height:100%;background:#f04b37;transform:scaleX(0);transform-origin:left"></i></div>
+    <div style="display:flex;justify-content:space-between;gap:16px;font-size:13px;letter-spacing:.24em;color:#8f8a82;font-variant-numeric:tabular-nums"><span>HAIR CULTURE · WIEN × BEOGRAD</span><span data-load-num>000</span></div>
+  </div>
+</div>
+</sc-if>
+
+<!-- GATEWAY -->
+<sc-if value="{{ gate }}" hint-placeholder-val="{{ false }}">
+<section data-gate aria-label="Standort wählen · Izaberite lokaciju" style="position:fixed;inset:0;z-index:700;background:#070707;display:flex;flex-wrap:wrap;overflow:hidden">
+  <div style="position:absolute;z-index:9;left:50%;top:clamp(18px,5vh,48px);transform:translateX(-50%);text-align:center;pointer-events:none;mix-blend-mode:difference;white-space:nowrap">
+    <div style="font-family:Cormorant, Georgia, serif;font-size:22px;letter-spacing:.08em">GRUPPA L’ULTIMA</div>
+    <div style="font-size:12px;letter-spacing:.32em;margin-top:6px">ONE CULTURE · TWO CITIES</div>
+  </div>
+  <button type="button" data-enter="at" onClick="{{ enterAt }}" aria-label="Enter Wien — Österreich" style="position:relative;flex:1 1 440px;min-width:0;min-height:50vh;border:0;margin:0;padding:0;background:#080808;cursor:pointer;overflow:hidden;text-align:left;color:#eeeae2;transition:flex-grow 1s cubic-bezier(.76,0,.18,1)" style-hover="flex-grow:1.3">
+    <span data-gate-img style="position:absolute;inset:-5%;display:block">
+      <img src="assets/wien-couture.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:saturate(.8) contrast(1.08) brightness(.85);transform:translate3d(calc(var(--mx,0) * -26px), calc(var(--my,0) * -20px), 0)">
+    </span>
+    <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.9) 0%, rgba(7,7,7,0) 60%)"></span>
+    <span data-gate-label style="position:absolute;z-index:3;left:clamp(22px,4vw,64px);right:24px;bottom:clamp(28px,8vh,80px);display:flex;flex-direction:column;gap:clamp(8px,2vh,20px)">
+      <span style="font-size:13px;letter-spacing:.24em;color:#d6d0c6">ÖSTERREICH · HAUTE COIFFURE · 5 SALONS</span>
+      <span style="font-family:Cormorant, Georgia, serif;font-size:clamp(84px,11vw,190px);line-height:.78;letter-spacing:-.05em">Wien</span>
+      <span style="display:flex;align-items:center;gap:16px;font-size:14px;letter-spacing:.16em;text-transform:uppercase"><i style="display:block;width:64px;height:1px;background:#f04b37"></i>Experience Vienna</span>
+    </span>
+  </button>
+  <button type="button" data-enter="rs" onClick="{{ enterRs }}" aria-label="Uđi u Beograd — Srbija" style="position:relative;flex:1 1 440px;min-width:0;min-height:50vh;border:0;margin:0;padding:0;background:#080808;cursor:pointer;overflow:hidden;text-align:left;color:#eeeae2;transition:flex-grow 1s cubic-bezier(.76,0,.18,1)" style-hover="flex-grow:1.3">
+    <span data-gate-img style="position:absolute;inset:-5%;display:block">
+      <img src="assets/belgrade-couture.webp" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center 22%;filter:saturate(.85) contrast(1.08) brightness(.85);transform:translate3d(calc(var(--mx,0) * -26px), calc(var(--my,0) * -20px), 0)">
+    </span>
+    <span aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.9) 0%, rgba(7,7,7,0) 60%)"></span>
+    <span data-gate-label style="position:absolute;z-index:3;left:clamp(22px,4vw,64px);right:24px;bottom:clamp(28px,8vh,80px);display:flex;flex-direction:column;gap:clamp(8px,2vh,20px)">
+      <span style="font-size:13px;letter-spacing:.24em;color:#d6d0c6">SRBIJA · HAIR IN MOTION · ČUBRINA 10</span>
+      <span style="font-family:Cormorant, Georgia, serif;font-size:clamp(84px,11vw,190px);line-height:.78;letter-spacing:-.05em;font-style:italic">Beograd</span>
+      <span style="display:flex;align-items:center;gap:16px;font-size:14px;letter-spacing:.16em;text-transform:uppercase"><i style="display:block;width:64px;height:1px;background:#f04b37"></i>Uđi u Beograd</span>
+    </span>
+  </button>
+  <div aria-hidden="true" style="position:absolute;z-index:8;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(transparent, #eeeae2 30%, #f04b37 50%, #eeeae2 70%, transparent);box-shadow:0 0 40px rgba(240,75,55,.6);pointer-events:none;opacity:{{ seamOpacity }}"></div>
+</section>
+</sc-if>
+
+<!-- MAST -->
+<header style="position:fixed;z-index:300;inset:0 0 auto;height:76px;padding:0 clamp(18px,3vw,48px);display:flex;align-items:center;justify-content:space-between;gap:20px;mix-blend-mode:difference;color:#eeeae2">
+  <a href="#top" aria-label="Gruppa L’Ultima — Start" style="display:flex;align-items:baseline;gap:14px;font-family:Cormorant, Georgia, serif;font-size:23px;letter-spacing:.06em;white-space:nowrap">GRUPPA L’ULTIMA</a>
+  <nav aria-label="Primary" style="display:flex;align-items:center;gap:clamp(16px,2.2vw,32px);font-size:13px;letter-spacing:.16em;text-transform:uppercase">
+    <sc-if value="{{ wide }}" hint-placeholder-val="{{ true }}">
+      <a href="#salons" style="padding:12px 0" style-hover="color:#f04b37">{{ t.navSalons }}</a>
+      <a href="#services" style="padding:12px 0" style-hover="color:#f04b37">{{ t.navServices }}</a>
+      <a href="#culture" style="padding:12px 0" style-hover="color:#f04b37">{{ t.navCulture }}</a>
+      <span aria-live="off" style="display:flex;align-items:center;gap:10px;white-space:nowrap;font-variant-numeric:tabular-nums;opacity:.8"><i data-pulse style="display:block;width:6px;height:6px;border-radius:50%;background:currentColor"></i>{{ cityClock }}</span>
+      <button type="button" onClick="{{ openGate }}" style="background:none;border:0;padding:12px 0;cursor:pointer;letter-spacing:.16em;text-transform:uppercase" style-hover="color:#f04b37">{{ t.switch }}</button>
+    </sc-if>
+    <button type="button" data-magnet onClick="{{ openBook }}" style="background:transparent;border:1px solid currentColor;border-radius:999px;padding:13px 22px;min-height:46px;cursor:pointer;letter-spacing:.16em;text-transform:uppercase;transition:background-color .3s, color .3s" style-hover="background-color:#eeeae2;color:#070707">{{ t.book }}</button>
+    <sc-if value="{{ narrow }}" hint-placeholder-val="{{ false }}">
+      <button type="button" onClick="{{ toggleMenu }}" aria-expanded="{{ menuOpen }}" aria-label="Menu" style="background:none;border:0;width:46px;height:46px;display:grid;place-items:center;cursor:pointer;padding:0">
+        <span style="display:grid;gap:7px;width:26px"><i style="display:block;height:1px;background:currentColor"></i><i style="display:block;height:1px;background:currentColor;width:70%;justify-self:end"></i></span>
+      </button>
+    </sc-if>
+  </nav>
+</header>
+
+<sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+<nav aria-label="Mobile" style="position:fixed;inset:0;z-index:290;background:#070707;padding:110px 24px 32px;display:flex;flex-direction:column;justify-content:space-between">
+  <div style="display:flex;flex-direction:column;gap:14px;font-family:Cormorant, Georgia, serif;font-size:clamp(52px,15vw,84px);line-height:1">
+    <a href="#salons" onClick="{{ closeMenu }}">{{ t.navSalons }}</a>
+    <a href="#services" onClick="{{ closeMenu }}">{{ t.navServices }}</a>
+    <a href="#culture" onClick="{{ closeMenu }}" style="font-style:italic">{{ t.navCulture }}</a>
+    <button type="button" onClick="{{ openGate }}" style="background:none;border:0;padding:0;text-align:left;font:inherit;color:#f04b37;cursor:pointer">{{ t.switch }}</button>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px;font-size:14px;letter-spacing:.18em;color:#b5afa5;font-variant-numeric:tabular-nums"><i data-pulse style="display:block;width:6px;height:6px;border-radius:50%;background:#f04b37"></i>{{ cityClock }} · {{ openSummary }}</div>
+</nav>
+</sc-if>
+
+<main>
+<!-- HERO · depth tunnel -->
+<section id="top" data-scene="hero" aria-label="{{ t.heroAria }}" style="position:relative;height:330vh">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden;background:radial-gradient(120% 90% at 70% 40%, #15120f 0%, #070707 60%);perspective:1100px;perspective-origin:58% 48%">
+    <div data-world style="position:absolute;inset:0;transform-style:preserve-3d;transform:translateZ(calc(var(--p,0) * 2600px)) rotateY(calc(var(--mx,0) * 5deg)) rotateX(calc(var(--my,0) * -4deg))">
+      <figure style="position:absolute;left:50%;top:50%;margin:0;width:min(58vh,86vw);aspect-ratio:2/3;transform:translate3d(calc(-50% + clamp(30px,15vw,300px)), -50%, 0px);opacity:clamp(0, calc((780 - var(--p,0) * 2600) / 520), 1)">
+        <img data-plane-img src="{{ hero.a }}" alt="{{ hero.aAlt }}" fetchpriority="high" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 72% 78% at 50% 42%, #000 55%, transparent 100%);mask-image:radial-gradient(ellipse 72% 78% at 50% 42%, #000 55%, transparent 100%)">
+        <figcaption style="position:absolute;left:0;bottom:-34px;font-size:13px;letter-spacing:.22em;color:#b5afa5;text-transform:uppercase">{{ hero.aCap }}</figcaption>
+      </figure>
+      <div aria-hidden="true" style="position:absolute;left:50%;top:50%;white-space:nowrap;transform:translate3d(-50%, -50%, -1500px);font-family:Cormorant, Georgia, serif;font-style:italic;font-size:clamp(120px,17vw,300px);line-height:1;letter-spacing:-.05em;color:#eeeae2;opacity:min(clamp(0, calc((780 - (var(--p,0) * 2600 - 1500)) / 520), .9), clamp(0, calc(((var(--p,0) * 2600 - 1500) + 750) / 450), 1))">{{ t.heroDepth }}</div>
+      <figure style="position:absolute;left:50%;top:50%;margin:0;width:min(44vh,62vw);aspect-ratio:2/3;transform:translate3d(calc(-50% - clamp(60px,22vw,430px)), -44%, -1000px);opacity:min(clamp(0, calc((780 - (var(--p,0) * 2600 - 1000)) / 520), 1), clamp(0, calc(((var(--p,0) * 2600 - 1000) + 750) / 450), 1))">
+        <img data-plane-img src="{{ hero.b }}" alt="{{ hero.bAlt }}" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 75% 80% at 50% 45%, #000 50%, transparent 100%);mask-image:radial-gradient(ellipse 75% 80% at 50% 45%, #000 50%, transparent 100%)">
+        <figcaption style="position:absolute;left:0;bottom:-34px;font-size:13px;letter-spacing:.22em;color:#b5afa5;text-transform:uppercase">{{ hero.bCap }}</figcaption>
+      </figure>
+      <figure style="position:absolute;left:50%;top:50%;margin:0;width:min(52vh,74vw);aspect-ratio:2/3;transform:translate3d(calc(-50% + clamp(30px,19vw,380px)), -54%, -2100px);opacity:min(clamp(0, calc((780 - (var(--p,0) * 2600 - 2100)) / 520), 1), clamp(0, calc(((var(--p,0) * 2600 - 2100) + 750) / 450), 1))">
+        <img data-plane-img src="{{ hero.c }}" alt="{{ hero.cAlt }}" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover;-webkit-mask-image:radial-gradient(ellipse 75% 80% at 50% 45%, #000 50%, transparent 100%);mask-image:radial-gradient(ellipse 75% 80% at 50% 45%, #000 50%, transparent 100%)">
+        <figcaption style="position:absolute;left:0;bottom:-34px;font-size:13px;letter-spacing:.22em;color:#b5afa5;text-transform:uppercase">{{ hero.cCap }}</figcaption>
+      </figure>
+    </div>
+
+    <div data-lens aria-hidden="true" style="position:absolute;left:0;top:0;z-index:4;width:clamp(130px,14vw,240px);height:clamp(240px,46vh,470px);border-radius:999px;pointer-events:none;backdrop-filter:blur(4px) saturate(1.7) brightness(1.15);background:linear-gradient(165deg, rgba(255,255,255,.2) 0%, rgba(255,255,255,.03) 38%, rgba(255,255,255,0) 62%, rgba(255,255,255,.1) 100%);border:1px solid rgba(255,255,255,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.55), inset 14px 0 30px rgba(255,255,255,.07), inset -10px -20px 40px rgba(240,75,55,.10), 0 40px 90px rgba(0,0,0,.45);opacity:clamp(0, calc(1 - var(--p,0) * 2.4), 1);will-change:transform">
+      <span style="position:absolute;left:16%;top:5%;width:34%;height:22%;border-radius:50%;background:radial-gradient(closest-side, rgba(255,255,255,.55), rgba(255,255,255,0));filter:blur(6px)"></span>
+      <span style="position:absolute;right:14%;bottom:7%;width:20%;height:10%;border-radius:50%;background:radial-gradient(closest-side, rgba(255,255,255,.3), rgba(255,255,255,0));filter:blur(4px)"></span>
+    </div>
+
+    <div aria-hidden="true" style="position:absolute;inset:0;z-index:5;pointer-events:none;background:linear-gradient(90deg, rgba(7,7,7,.9) 0%, rgba(7,7,7,.45) 36%, rgba(7,7,7,0) 64%), linear-gradient(0deg, rgba(7,7,7,.92) 0%, rgba(7,7,7,0) 46%);opacity:clamp(0, calc(1 - var(--p,0) * 2.2), 1)"></div>
+
+    <div style="position:absolute;z-index:6;left:clamp(20px,4vw,72px);right:clamp(20px,4vw,72px);bottom:clamp(30px,8vh,96px);pointer-events:none;opacity:clamp(0, calc(1 - var(--p,0) * 3.4), 1)">
+      <div data-intro style="font-size:13px;letter-spacing:.26em;color:#f04b37;text-transform:uppercase;margin-bottom:clamp(14px,2.4vh,26px)">{{ t.heroKicker }}</div>
+      <h1 style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(76px,13.2vw,232px);line-height:.8;letter-spacing:-.055em">
+        <span style="display:block;overflow:hidden;padding:.04em 0 .1em;transform:translate3d(calc(var(--p,0) * -38vw), 0, 0)"><sc-for list="{{ h1a }}" as="ch" hint-placeholder-count="9"><span data-letter style="display:inline-block;white-space:pre">{{ ch }}</span></sc-for></span>
+        <span style="display:block;overflow:hidden;padding:.02em 0 .12em;margin-left:clamp(0px,11vw,220px);font-style:italic;transform:translate3d(calc(var(--p,0) * 30vw), 0, 0)"><sc-for list="{{ h1b }}" as="ch" hint-placeholder-count="8"><span data-letter style="display:inline-block;white-space:pre">{{ ch }}</span></sc-for><span data-letter style="display:inline-block;color:#f04b37">.</span></span>
+      </h1>
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:28px;margin-top:clamp(20px,4vh,44px)">
+        <p data-intro style="margin:0;max-width:480px;font-size:clamp(17px,1.25vw,20px);line-height:1.6;color:#d6d0c6;text-wrap:pretty;margin-left:clamp(0px,11vw,220px)">{{ t.heroIntro }}</p>
+        <div data-intro style="display:flex;flex-wrap:wrap;align-items:center;gap:22px;pointer-events:auto">
+          <button type="button" data-magnet onClick="{{ openBook }}" style="display:flex;align-items:center;gap:14px;background:rgba(238,234,226,.04);border:1px solid rgba(238,234,226,.7);border-radius:999px;padding:18px 28px;min-height:56px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#eeeae2;cursor:pointer;backdrop-filter:blur(10px);transition:background-color .35s, color .35s, border-color .35s" style-hover="background-color:#eeeae2;color:#070707;border-color:#eeeae2">{{ t.heroCta }}<i style="display:block;width:28px;height:1px;background:#f04b37"></i></button>
+          <a href="#salons" style="display:flex;align-items:center;gap:10px;font-size:14px;color:#d6d0c6;padding:10px 0" style-hover="color:#eeeae2"><sc-if value="{{ anyOpen }}" hint-placeholder-val="{{ true }}"><span style="position:relative;display:block;width:8px;height:8px"><i data-pulse style="position:absolute;inset:0;border-radius:50%;background:#f04b37"></i><i style="position:absolute;inset:0;border-radius:50%;background:#f04b37"></i></span></sc-if><sc-if value="{{ noneOpen }}"><i style="display:block;width:8px;height:8px;border-radius:50%;border:1px solid currentColor"></i></sc-if>{{ openSummary }}</a>
+        </div>
+      </div>
+    </div>
+
+    <div aria-hidden="true" style="position:absolute;z-index:6;right:clamp(18px,3vw,44px);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;align-items:center;gap:16px;font-size:12px;letter-spacing:.3em;color:#b5afa5">
+      <span style="writing-mode:vertical-rl">SCROLL</span>
+      <span style="position:relative;display:block;width:1px;height:120px;background:rgba(238,234,226,.18);overflow:hidden"><i style="position:absolute;inset:0;background:#f04b37;transform-origin:top;transform:scaleY(var(--p,0))"></i></span>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO · masked paper, scrubbed words, drawn line art -->
+<section data-scene="manifesto" aria-label="Manifest" style="position:relative;height:250vh;background:#070707">
+  <div style="position:sticky;top:0;height:100vh;overflow:hidden">
+    <div style="position:absolute;inset:0;background:#eeeae2;color:#0b0a09;clip-path:circle(calc(clamp(0, var(--p,0) * 5, 1) * 150%) at 72% 55%)">
+      <div data-aurora="1" aria-hidden="true" style="position:absolute;width:44vw;height:44vw;right:-12vw;bottom:-18vw;border-radius:50%;background:#f04b37;filter:blur(80px);opacity:.22"></div>
+      <figure style="position:absolute;margin:0;right:clamp(-60px,2vw,80px);top:50%;height:min(96vh,150vw);aspect-ratio:2/3;transform:translate3d(0, calc(-50% + (0.5 - var(--p,0)) * 10vh), 0);mix-blend-mode:multiply;clip-path:inset(0 0 calc((1 - clamp(0, (var(--p,0) - .12) * 1.9, 1)) * 100%) 0);opacity:.95">
+        <img src="assets/belgrade-lineart.webp" alt="{{ t.lineAlt }}" loading="lazy" decoding="async" style="display:block;width:100%;height:100%;object-fit:cover">
+      </figure>
+      <div style="position:absolute;left:clamp(20px,5vw,96px);right:clamp(20px,5vw,96px);top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:clamp(28px,6vh,64px)">
+        <div style="font-size:13px;letter-spacing:.26em;color:#b2311f;text-transform:uppercase">{{ t.manifestoKicker }}</div>
+        <h2 style="margin:0;max-width:min(1180px,78vw);font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(50px,7.6vw,140px);line-height:.92;letter-spacing:-.045em;text-wrap:balance">
+          <sc-for list="{{ mWordsA }}" as="w" hint-placeholder-count="5"><span data-word style="display:inline-block;margin-right:.2em">{{ w }}</span></sc-for>
+          <span style="font-style:italic;color:#c6311d"><sc-for list="{{ mWordsB }}" as="w" hint-placeholder-count="3"><span data-word style="display:inline-block;margin-right:.2em">{{ w }}</span></sc-for></span>
+        </h2>
+        <p style="margin:0 0 0 clamp(0px,18vw,340px);max-width:460px;font-size:clamp(17px,1.25vw,20px);line-height:1.65;color:#3b3833;text-wrap:pretty;opacity:clamp(0, calc((var(--p,0) - .62) * 5), 1);transform:translate3d(0, calc((1 - clamp(0, (var(--p,0) - .62) * 5, 1)) * 30px), 0)">{{ t.manifestoText }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ATELIER · 3D ring -->
+<section id="atelier" data-scene="ring" aria-label="{{ t.ringTitleA }}" style="position:relative;height:480vh;background:#070707">
+  <div data-ring-stage style="position:sticky;top:0;height:100vh;overflow:hidden;perspective:1500px;perspective-origin:50% 42%;--cw:clamp(210px,23vw,350px);background:radial-gradient(70% 60% at 50% 58%, #1a1512 0%, #070707 70%)">
+    <div style="position:absolute;z-index:3;left:clamp(20px,4vw,72px);top:clamp(96px,14vh,150px);max-width:620px">
+      <div style="font-size:13px;letter-spacing:.26em;color:#f04b37;text-transform:uppercase;margin-bottom:16px">{{ t.ringKicker }}</div>
+      <h2 style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(46px,5.6vw,100px);line-height:.9;letter-spacing:-.045em">{{ t.ringTitleA }} <em style="color:#b5afa5">{{ t.ringTitleB }}</em></h2>
+    </div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:60%;width:calc(var(--cw) * 3.4);height:calc(var(--cw) * .7);transform:translate(-50%, 0) rotateX(78deg);border-radius:50%;background:radial-gradient(closest-side, rgba(240,75,55,.22), rgba(240,75,55,0));filter:blur(20px)"></div>
+    <div data-ring style="position:absolute;left:50%;top:56%;width:var(--cw);height:calc(var(--cw) * 1.36);margin-left:calc(var(--cw) / -2);margin-top:calc(var(--cw) * -.68);transform-style:preserve-3d;transform:translateZ(calc(var(--cw) * -1.02)) rotateX(calc(-5deg + var(--my,0) * -5deg)) rotateY(calc(var(--ang,0) * 1deg + var(--mx,0) * 8deg))">
+      <button type="button" data-card="0" onClick="{{ d0.pick }}" aria-label="{{ d0.name }} — {{ d0.sub }}" style="position:absolute;inset:0;padding:0;border:1px solid rgba(238,234,226,.16);border-radius:6px;overflow:hidden;cursor:pointer;background:#111;color:#eeeae2;text-align:left;backface-visibility:hidden;transform:rotateY(0deg) translateZ(calc(var(--cw) * 1.02))">
+        <img src="{{ d0.img }}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.85) 0%, rgba(7,7,7,0) 50%)"></span>
+        <span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px"><span style="font-family:Cormorant, Georgia, serif;font-size:clamp(34px,3vw,50px);line-height:.9">{{ d0.name }}</span><span style="font-size:13px;letter-spacing:.1em;color:#d6d0c6;white-space:nowrap">{{ d0.from }}</span></span>
+      </button>
+      <button type="button" data-card="1" onClick="{{ d1.pick }}" aria-label="{{ d1.name }} — {{ d1.sub }}" style="position:absolute;inset:0;padding:0;border:1px solid rgba(238,234,226,.16);border-radius:6px;overflow:hidden;cursor:pointer;background:#111;color:#eeeae2;text-align:left;backface-visibility:hidden;transform:rotateY(72deg) translateZ(calc(var(--cw) * 1.02))">
+        <img src="{{ d1.img }}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.85) 0%, rgba(7,7,7,0) 50%)"></span>
+        <span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px"><span style="font-family:Cormorant, Georgia, serif;font-size:clamp(34px,3vw,50px);line-height:.9">{{ d1.name }}</span><span style="font-size:13px;letter-spacing:.1em;color:#d6d0c6;white-space:nowrap">{{ d1.from }}</span></span>
+      </button>
+      <button type="button" data-card="2" onClick="{{ d2.pick }}" aria-label="{{ d2.name }} — {{ d2.sub }}" style="position:absolute;inset:0;padding:0;border:1px solid rgba(238,234,226,.16);border-radius:6px;overflow:hidden;cursor:pointer;background:#111;color:#eeeae2;text-align:left;backface-visibility:hidden;transform:rotateY(144deg) translateZ(calc(var(--cw) * 1.02))">
+        <img src="{{ d2.img }}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.85) 0%, rgba(7,7,7,0) 50%)"></span>
+        <span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px"><span style="font-family:Cormorant, Georgia, serif;font-size:clamp(34px,3vw,50px);line-height:.9">{{ d2.name }}</span><span style="font-size:13px;letter-spacing:.1em;color:#d6d0c6;white-space:nowrap">{{ d2.from }}</span></span>
+      </button>
+      <button type="button" data-card="3" onClick="{{ d3.pick }}" aria-label="{{ d3.name }} — {{ d3.sub }}" style="position:absolute;inset:0;padding:0;border:1px solid rgba(238,234,226,.16);border-radius:6px;overflow:hidden;cursor:pointer;background:#111;color:#eeeae2;text-align:left;backface-visibility:hidden;transform:rotateY(216deg) translateZ(calc(var(--cw) * 1.02))">
+        <img src="{{ d3.img }}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.85) 0%, rgba(7,7,7,0) 50%)"></span>
+        <span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px"><span style="font-family:Cormorant, Georgia, serif;font-size:clamp(34px,3vw,50px);line-height:.9">{{ d3.name }}</span><span style="font-size:13px;letter-spacing:.1em;color:#d6d0c6;white-space:nowrap">{{ d3.from }}</span></span>
+      </button>
+      <button type="button" data-card="4" onClick="{{ d4.pick }}" aria-label="{{ d4.name }} — {{ d4.sub }}" style="position:absolute;inset:0;padding:0;border:1px solid rgba(238,234,226,.16);border-radius:6px;overflow:hidden;cursor:pointer;background:#eeeae2;color:#eeeae2;text-align:left;backface-visibility:hidden;transform:rotateY(288deg) translateZ(calc(var(--cw) * 1.02))">
+        <img src="{{ d4.img }}" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <span style="position:absolute;inset:0;background:linear-gradient(0deg, rgba(7,7,7,.85) 0%, rgba(7,7,7,0) 50%)"></span>
+        <span style="position:absolute;left:20px;right:20px;bottom:18px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px"><span style="font-family:Cormorant, Georgia, serif;font-size:clamp(34px,3vw,50px);line-height:.9">{{ d4.name }}</span><span style="font-size:13px;letter-spacing:.1em;color:#d6d0c6;white-space:nowrap">{{ d4.from }}</span></span>
+      </button>
+    </div>
+
+    <div style="position:absolute;z-index:4;left:clamp(16px,4vw,72px);right:clamp(16px,4vw,72px);bottom:clamp(18px,5vh,56px);display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px;pointer-events:none">
+      <div aria-live="polite" style="pointer-events:auto;width:min(460px,100%);padding:22px 24px;border-radius:14px;background:linear-gradient(140deg, rgba(255,255,255,.1), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 30px 70px rgba(0,0,0,.4)">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;gap:12px"><span style="font-family:Cormorant, Georgia, serif;font-size:36px;line-height:1">{{ dA.name }}</span><span style="font-size:13px;letter-spacing:.14em;color:#f04b37;text-transform:uppercase">{{ dA.sub }}</span></div>
+        <p style="margin:10px 0 16px;font-size:16px;line-height:1.55;color:#d6d0c6;text-wrap:pretty">{{ dA.text }}</p>
+        <button type="button" onClick="{{ dA.pick }}" style="display:flex;align-items:center;gap:12px;background:none;border:0;border-bottom:1px solid rgba(238,234,226,.4);padding:8px 0;font-size:14px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;min-height:44px" style-hover="border-color:#f04b37;color:#f04b37">{{ t.ringCta }} · {{ dA.from }}</button>
+      </div>
+      <div aria-hidden="true" style="display:flex;gap:8px">
+        <sc-for list="{{ ringDots }}" as="dot" hint-placeholder-count="5">
+          <sc-if value="{{ dot.on }}"><i style="display:block;width:44px;height:2px;background:#f04b37"></i></sc-if>
+          <sc-if value="{{ dot.off }}"><i style="display:block;width:22px;height:2px;background:rgba(238,234,226,.25)"></i></sc-if>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SALONS · sticky live index -->
+<section id="salons" data-scene="salons" style="position:relative;background:#0b0b0b;padding:clamp(90px,12vw,190px) clamp(20px,4vw,72px);scroll-margin-top:0">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));gap:clamp(40px,6vw,110px);align-items:start">
+    <div style="position:sticky;top:120px">
+      <div style="overflow:hidden"><h2 data-reveal="mask" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(84px,11vw,200px);line-height:.82;letter-spacing:-.06em">{{ t.salonTitle }}</h2></div>
+      <p data-reveal="rise" style="margin:clamp(24px,3vw,44px) 0 0;max-width:440px;color:#b5afa5;text-wrap:pretty">{{ t.salonIntro }}</p>
+      <div data-reveal="rise" style="margin-top:clamp(30px,4vw,60px);display:flex;flex-direction:column;gap:6px">
+        <span style="font-family:Cormorant, Georgia, serif;font-size:clamp(56px,6vw,104px);line-height:.9;letter-spacing:-.03em;font-variant-numeric:tabular-nums">{{ clock }}</span>
+        <span style="display:flex;align-items:center;gap:12px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;color:#d6d0c6"><span style="position:relative;display:block;width:8px;height:8px"><i data-pulse style="position:absolute;inset:0;border-radius:50%;background:#f04b37"></i><i style="position:absolute;inset:0;border-radius:50%;background:#f04b37"></i></span>{{ cityName }} · {{ openSummary }}</span>
+      </div>
+    </div>
+    <div>
+      <div data-reveal="line" aria-hidden="true" style="height:1px;background:linear-gradient(90deg, transparent, rgba(238,234,226,.3) 48px, rgba(238,234,226,.3) calc(100% - 48px), transparent);transform-origin:left"></div>
+      <sc-for list="{{ salons }}" as="s" hint-placeholder-count="5">
+        <article data-reveal="rise" style="position:relative;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 230px), 1fr));gap:18px 28px;padding:clamp(26px,3vw,40px) clamp(4px,1vw,18px);border-bottom:1px solid rgba(238,234,226,.14);background:linear-gradient(#f04b37,#f04b37) no-repeat left top / 0% 100%;transition:background-size .8s cubic-bezier(.76,0,.18,1), color .4s;color:#eeeae2" style-hover="background-size:100% 100%;color:#0b0a09">
+          <div>
+            <div style="font-size:13px;letter-spacing:.2em;opacity:.7">{{ s.code }}</div>
+            <h3 style="margin:8px 0 0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(40px,4vw,68px);line-height:.95;letter-spacing:-.03em">{{ s.name }}</h3>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:14px;font-size:14px;letter-spacing:.06em">
+              <sc-if value="{{ s.open }}"><span style="position:relative;display:block;width:8px;height:8px;flex:none"><i data-pulse style="position:absolute;inset:0;border-radius:50%;background:currentColor"></i><i style="position:absolute;inset:0;border-radius:50%;background:currentColor"></i></span></sc-if>
+              <sc-if value="{{ s.closed }}"><i style="display:block;width:8px;height:8px;border-radius:50%;border:1px solid currentColor;flex:none;opacity:.7"></i></sc-if>
+              <span>{{ s.label }}</span>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;justify-content:space-between;gap:18px">
+            <p style="margin:0;font-size:16px;line-height:1.6;opacity:.82">{{ s.address }}<br>{{ s.hours }}<br>{{ s.email }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px">
+              <a href="{{ s.tel }}" style="display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px;border:1px solid currentColor;border-radius:999px;font-size:14px;letter-spacing:.08em;font-variant-numeric:tabular-nums">{{ t.call }} · {{ s.show }}</a>
+              <a href="{{ s.map }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:46px;padding:0 6px;font-size:14px;letter-spacing:.08em;border-bottom:1px solid transparent" style-hover="border-color:currentColor">{{ t.route }} ↗</a>
+            </div>
+          </div>
+        </article>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES · aurora + glass -->
+<section id="services" data-scene="services" style="position:relative;overflow:hidden;background:#080808;padding:clamp(90px,12vw,190px) clamp(20px,4vw,72px)">
+  <div aria-hidden="true" style="position:absolute;inset:0;pointer-events:none">
+    <div data-aurora="2" style="position:absolute;left:-10vw;top:10%;width:52vw;height:52vw;border-radius:50%;background:radial-gradient(closest-side, rgba(240,75,55,.55), rgba(240,75,55,0));filter:blur(40px)"></div>
+    <div data-aurora="3" style="position:absolute;right:-14vw;top:36%;width:46vw;height:46vw;border-radius:50%;background:radial-gradient(closest-side, rgba(168,182,184,.38), rgba(168,182,184,0));filter:blur(50px)"></div>
+    <div data-aurora="1" style="position:absolute;left:30%;bottom:-20vw;width:40vw;height:40vw;border-radius:50%;background:radial-gradient(closest-side, rgba(150,40,30,.5), rgba(150,40,30,0));filter:blur(50px)"></div>
+  </div>
+  <div style="position:relative">
+    <div style="overflow:hidden"><h2 data-reveal="mask" style="margin:0 0 clamp(50px,7vw,110px);font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(70px,10vw,184px);line-height:.82;letter-spacing:-.06em">{{ t.servicesTitleA }} <em style="color:#f04b37">{{ t.servicesTitleB }}</em></h2></div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 340px), 1fr));gap:clamp(30px,5vw,90px);align-items:start">
+      <sc-if value="{{ isAt }}" hint-placeholder-val="{{ true }}">
+        <div role="tablist" aria-label="{{ t.navServices }}" style="position:sticky;top:120px;display:flex;flex-direction:column">
+          <sc-for list="{{ svcTabs }}" as="tab" hint-placeholder-count="6">
+            <button type="button" role="tab" aria-selected="{{ tab.active }}" onClick="{{ tab.select }}" style="display:flex;align-items:center;gap:16px;background:none;border:0;border-top:1px solid rgba(238,234,226,.14);padding:18px 0;min-height:60px;text-align:left;cursor:pointer;font-family:Cormorant, Georgia, serif;font-size:clamp(28px,2.4vw,40px);line-height:1" style-hover="color:#eeeae2">
+              <sc-if value="{{ tab.active }}"><i style="display:block;width:36px;height:1px;background:#f04b37;flex:none"></i><span style="color:#eeeae2">{{ tab.name }}</span></sc-if>
+              <sc-if value="{{ tab.idle }}"><span style="color:#8f8a82">{{ tab.name }}</span></sc-if>
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+      <div data-reveal="rise" style="grid-column:span 1;min-width:0;padding:clamp(24px,3.4vw,56px);border-radius:18px;background:linear-gradient(150deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.035) 50%, rgba(255,255,255,.06) 100%);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(28px) saturate(1.6);box-shadow:inset 0 1px 0 rgba(255,255,255,.25), inset 0 -1px 0 rgba(255,255,255,.05), 0 40px 100px rgba(0,0,0,.45)">
+        <sc-if value="{{ isAt }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:22px"><h3 style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(40px,4.4vw,76px);line-height:.95;letter-spacing:-.03em">{{ svc.name }}</h3><span style="font-size:13px;letter-spacing:.2em;color:#b5afa5;text-transform:uppercase">EUR · inkl. MwSt.</span></div>
+          <div data-plines>
+            <sc-for list="{{ svc.lines }}" as="l" hint-placeholder-count="4">
+              <div data-pline style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:baseline;padding:18px 0;border-top:1px solid rgba(238,234,226,.14)">
+                <span style="font-size:clamp(16px,1.2vw,19px);line-height:1.45;color:#e2ddd3">{{ l.n }}</span>
+                <span style="font-family:Cormorant, Georgia, serif;font-size:clamp(22px,1.8vw,30px);line-height:1;white-space:nowrap;font-variant-numeric:tabular-nums">{{ l.p }}</span>
+              </div>
+            </sc-for>
+          </div>
+          <p style="margin:28px 0 0;font-size:15px;line-height:1.65;color:#b5afa5;text-wrap:pretty">{{ t.priceNote }}</p>
+        </sc-if>
+        <sc-if value="{{ isRs }}" hint-placeholder-val="{{ false }}">
+          <h3 style="margin:0 0 26px;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(40px,4.4vw,76px);line-height:.95;letter-spacing:-.03em">{{ t.rsSvcTitle }}</h3>
+          <sc-for list="{{ rsSvc }}" as="l" hint-placeholder-count="4">
+            <div data-pline style="display:grid;grid-template-columns:minmax(0,180px) minmax(0,1fr);gap:24px;padding:18px 0;border-top:1px solid rgba(238,234,226,.14)">
+              <span style="font-family:Cormorant, Georgia, serif;font-size:30px;line-height:1">{{ l.n }}</span>
+              <span style="font-size:17px;line-height:1.55;color:#d6d0c6">{{ l.p }}</span>
+            </div>
+          </sc-for>
+          <p style="margin:28px 0 0;font-size:15px;line-height:1.65;color:#b5afa5;text-wrap:pretty">{{ t.priceNote }}</p>
+        </sc-if>
+        <button type="button" onClick="{{ openBook }}" style="margin-top:30px;display:inline-flex;align-items:center;gap:14px;background:none;border:1px solid rgba(238,234,226,.7);border-radius:999px;padding:0 26px;min-height:54px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background-color .3s,color .3s" style-hover="background-color:#eeeae2;color:#070707">{{ t.bookCta }}<i style="display:block;width:26px;height:1px;background:#f04b37"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CULTURE · layered parallax -->
+<section id="culture" data-scene="culture" style="position:relative;overflow:hidden;background:#070707;padding:clamp(90px,10vw,170px) 0">
+  <div aria-hidden="true" style="white-space:nowrap;font-family:Cormorant, Georgia, serif;font-style:italic;font-size:clamp(120px,19vw,360px);line-height:.9;letter-spacing:-.05em;color:#15130f;transform:translate3d(calc((0.5 - var(--t,0)) * 50vw), 0, 0);margin-bottom:clamp(-140px,-9vw,-60px)">{{ t.cultureWord }} — {{ t.cultureWord }}</div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));gap:clamp(40px,6vw,110px);align-items:center;padding:0 clamp(20px,4vw,72px)">
+    <figure style="margin:0;position:relative;aspect-ratio:3/4;max-height:88vh;overflow:hidden;border-radius:4px;clip-path:inset(calc((1 - clamp(0, (var(--t,0) - .08) * 2.6, 1)) * 16%) calc((1 - clamp(0, (var(--t,0) - .08) * 2.6, 1)) * 22%) round 4px);transform:translate3d(0, calc((0.5 - var(--t,0)) * 8vh), 0)">
+      <img src="assets/austria-editorial.webp" alt="{{ t.cultureAlt }}" loading="lazy" decoding="async" style="display:block;width:100%;height:115%;object-fit:cover;transform:translate3d(0, calc((var(--t,0) - 0.5) * -12%), 0) scale(calc(1.18 - var(--t,0) * .18))">
+    </figure>
+    <div>
+      <div data-reveal="rise" style="font-size:13px;letter-spacing:.26em;color:#f04b37;text-transform:uppercase">{{ t.cultureKicker }}</div>
+      <div style="overflow:hidden;margin-top:22px"><h2 data-reveal="mask" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(60px,7.4vw,136px);line-height:.84;letter-spacing:-.05em">{{ t.cultureTitleA }}</h2></div>
+      <div style="overflow:hidden"><h2 data-reveal="mask" data-d="1" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-style:italic;color:#f04b37;font-size:clamp(60px,7.4vw,136px);line-height:.9;letter-spacing:-.05em;padding-bottom:.06em">{{ t.cultureTitleB }}</h2></div>
+      <p data-reveal="rise" style="margin:clamp(26px,3vw,46px) 0 0;max-width:540px;color:#c9c3b9;text-wrap:pretty">{{ t.cultureText }}</p>
+    </div>
+  </div>
+  <div style="margin-top:clamp(60px,8vw,130px);overflow:hidden;border-top:1px solid rgba(238,234,226,.12);border-bottom:1px solid rgba(238,234,226,.12);padding:22px 0">
+    <div data-marquee style="display:flex;width:max-content;gap:0;font-family:Cormorant, Georgia, serif;font-size:clamp(30px,3vw,48px);line-height:1;color:#d6d0c6;white-space:nowrap">
+      <span style="display:flex;gap:56px;padding-right:56px"><span>Ultima Verde</span><i style="color:#f04b37">✳</i><span>Sebastian Professional</span><i style="color:#f04b37">✳</i><span style="font-style:italic">Sassoon</span><i style="color:#f04b37">✳</i><span>Wella</span><i style="color:#f04b37">✳</i><span style="font-style:italic">Kérastase</span><i style="color:#f04b37">✳</i></span>
+      <span aria-hidden="true" style="display:flex;gap:56px;padding-right:56px"><span>Ultima Verde</span><i style="color:#f04b37">✳</i><span>Sebastian Professional</span><i style="color:#f04b37">✳</i><span style="font-style:italic">Sassoon</span><i style="color:#f04b37">✳</i><span>Wella</span><i style="color:#f04b37">✳</i><span style="font-style:italic">Kérastase</span><i style="color:#f04b37">✳</i></span>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER (AT) -->
+<sc-if value="{{ isAt }}" hint-placeholder-val="{{ true }}">
+<section aria-label="Karriere" style="background:#eeeae2;color:#0b0a09;padding:clamp(90px,11vw,180px) clamp(20px,4vw,72px)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));gap:clamp(40px,7vw,120px);align-items:end">
+    <div>
+      <div style="font-size:13px;letter-spacing:.26em;color:#b2311f;text-transform:uppercase;margin-bottom:22px">Karriere</div>
+      <div style="overflow:hidden"><h2 data-reveal="mask" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(76px,10vw,184px);line-height:.8;letter-spacing:-.06em">Talent braucht</h2></div>
+      <div style="overflow:hidden"><h2 data-reveal="mask" data-d="1" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-style:italic;color:#c6311d;font-size:clamp(76px,10vw,184px);line-height:.86;letter-spacing:-.06em;padding-bottom:.06em">Raum.</h2></div>
+    </div>
+    <div>
+      <p data-reveal="rise" style="margin:0;max-width:520px;color:#3b3833;text-wrap:pretty">Sie suchen die Herausforderung, sich in einem jungen, motivierten Team zu entwickeln und Ihr Potenzial auszuschöpfen?</p>
+      <div style="margin:30px 0 36px;display:flex;flex-direction:column">
+        <div data-reveal="rise" style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(11,10,9,.2)"><span>Assistentin / Assistent in Ausbildung</span></div>
+        <div data-reveal="rise" style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(11,10,9,.2)"><span>Stylistin / Stylist — mit oder ohne Master</span></div>
+        <div data-reveal="rise" style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(11,10,9,.2)"><span>Kontinuierliche Weiterbildung</span></div>
+        <div data-reveal="rise" style="display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-top:1px solid rgba(11,10,9,.2);border-bottom:1px solid rgba(11,10,9,.2)"><span>Leistungsbezogene Bezahlung</span></div>
+      </div>
+      <a href="mailto:info@gruppalultima.at?subject=Bewerbung%20Gruppa%20L'Ultima" style="display:inline-flex;align-items:center;gap:14px;min-height:54px;padding:0 26px;border:1px solid #0b0a09;border-radius:999px;font-size:14px;letter-spacing:.16em;text-transform:uppercase;transition:background-color .3s,color .3s" style-hover="background-color:#0b0a09;color:#eeeae2">Bewerbung senden<i style="display:block;width:26px;height:1px;background:#c6311d"></i></a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<!-- FINALE -->
+<section data-scene="finale" aria-label="{{ t.bookCta }}" style="position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:space-between;gap:80px;background:#070707;padding:clamp(110px,12vw,190px) clamp(20px,4vw,72px) 30px;overflow:hidden">
+  <div aria-hidden="true" style="position:absolute;right:-8vw;top:-10vw;width:60vw;height:60vw;border-radius:50%;background:radial-gradient(closest-side, rgba(240,75,55,.22), rgba(240,75,55,0));filter:blur(30px);transform:translate3d(0, calc((0.5 - var(--t,0)) * 20vh), 0)"></div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 420px), 1fr));gap:clamp(40px,6vw,100px);align-items:end">
+    <div>
+      <div style="overflow:hidden"><h2 data-reveal="mask" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(84px,12vw,232px);line-height:.78;letter-spacing:-.065em">{{ t.finalA }}</h2></div>
+      <div style="overflow:hidden"><h2 data-reveal="mask" data-d="1" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-style:italic;color:#f04b37;font-size:clamp(84px,12vw,232px);line-height:.86;letter-spacing:-.065em;padding-bottom:.08em">{{ t.finalB }}</h2></div>
+    </div>
+    <div data-reveal="rise">
+      <p style="margin:0;max-width:440px;color:#c9c3b9;text-wrap:pretty">{{ t.finalText }}</p>
+      <button type="button" data-magnet onClick="{{ openBook }}" style="margin-top:28px;display:inline-flex;align-items:center;gap:16px;background:#eeeae2;color:#070707;border:1px solid #eeeae2;border-radius:999px;padding:0 32px;min-height:62px;font-size:15px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background-color .3s,color .3s" style-hover="background-color:#f04b37;border-color:#f04b37">{{ t.bookCta }}<i style="display:block;width:30px;height:1px;background:currentColor"></i></button>
+    </div>
+  </div>
+  <footer style="position:relative;display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;padding-top:24px;border-top:1px solid rgba(238,234,226,.14);font-size:14px;color:#a39d93">
+    <div style="display:flex;flex-wrap:wrap;gap:4px 22px">
+      <button type="button" onClick="{{ legalImpressum }}" style="background:none;border:0;padding:10px 0;cursor:pointer;color:inherit" style-hover="color:#eeeae2">{{ t.lImpressum }}</button>
+      <button type="button" onClick="{{ legalPrivacy }}" style="background:none;border:0;padding:10px 0;cursor:pointer;color:inherit" style-hover="color:#eeeae2">{{ t.lPrivacy }}</button>
+      <button type="button" onClick="{{ legalCookies }}" style="background:none;border:0;padding:10px 0;cursor:pointer;color:inherit" style-hover="color:#eeeae2">{{ t.lCookies }}</button>
+      <button type="button" onClick="{{ legalTerms }}" style="background:none;border:0;padding:10px 0;cursor:pointer;color:inherit" style-hover="color:#eeeae2">{{ t.lTerms }}</button>
+    </div>
+    <div style="padding:10px 0">© {{ year }} GRUPPA L’ULTIMA · Designed by deXon Studio</div>
+  </footer>
+</section>
+</main>
+
+<!-- BOOKING -->
+<sc-if value="{{ bookOpen }}" hint-placeholder-val="{{ false }}">
+<div data-modal role="dialog" aria-modal="true" aria-labelledby="ul-book-title" onClick="{{ backdropClose }}" style="position:fixed;inset:0;z-index:800;display:grid;place-items:center;padding:14px;background:rgba(5,5,5,.55);backdrop-filter:blur(16px) saturate(1.2)">
+  <div data-dialog style="position:relative;width:min(980px,100%);max-height:92vh;overflow:auto;border-radius:22px;padding:clamp(24px,4vw,54px);background:linear-gradient(150deg, rgba(40,36,32,.82), rgba(14,13,12,.9));border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 60px 140px rgba(0,0,0,.6);backdrop-filter:blur(30px)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px">
+      <h2 id="ul-book-title" style="margin:0;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(52px,6vw,100px);line-height:.85;letter-spacing:-.05em">{{ t.bookTitleA }} <em style="color:#f04b37">{{ t.bookTitleB }}</em></h2>
+      <button type="button" data-close onClick="{{ closeAll }}" aria-label="Close" style="flex:none;width:52px;height:52px;border-radius:50%;border:1px solid rgba(238,234,226,.3);background:rgba(255,255,255,.04);cursor:pointer;font-size:24px;line-height:1" style-hover="border-color:#f04b37;color:#f04b37">×</button>
+    </div>
+    <p style="margin:22px 0 30px;max-width:680px;color:#c9c3b9;text-wrap:pretty">{{ t.bookInfo }}</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 270px), 1fr));gap:12px">
+      <sc-for list="{{ salons }}" as="s" hint-placeholder-count="5">
+        <a href="{{ s.tel }}" data-bookopt style="display:flex;flex-direction:column;gap:10px;padding:20px 22px;border-radius:14px;border:1px solid rgba(238,234,226,.16);background:rgba(255,255,255,.03);transition:border-color .3s, background-color .3s" style-hover="border-color:#f04b37;background-color:rgba(240,75,55,.08)">
+          <span style="font-size:12px;letter-spacing:.18em;color:#a39d93">{{ s.code }}</span><b style="font-family:Cormorant, Georgia, serif;font-weight:500;font-size:34px;line-height:1;margin-top:-4px">{{ s.name }}</b>
+          <span style="display:flex;align-items:center;gap:9px;font-size:14px;color:#e2ddd3"><sc-if value="{{ s.open }}"><i style="display:block;width:7px;height:7px;border-radius:50%;background:#f04b37"></i></sc-if><sc-if value="{{ s.closed }}"><i style="display:block;width:7px;height:7px;border-radius:50%;border:1px solid #a39d93"></i></sc-if>{{ s.label }}</span>
+          <span style="font-size:15px;line-height:1.55;color:#b5afa5">{{ s.address }}</span>
+          <span style="font-size:17px;letter-spacing:.04em;font-variant-numeric:tabular-nums;color:#eeeae2">{{ t.call }} · {{ s.show }}</span>
+        </a>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- LEGAL -->
+<sc-if value="{{ legalOpen }}" hint-placeholder-val="{{ false }}">
+<div data-modal role="dialog" aria-modal="true" aria-labelledby="ul-legal-title" onClick="{{ backdropClose }}" style="position:fixed;inset:0;z-index:800;display:grid;place-items:center;padding:14px;background:rgba(5,5,5,.6);backdrop-filter:blur(16px)">
+  <div data-dialog style="width:min(860px,100%);max-height:92vh;overflow:auto;border-radius:18px;padding:clamp(24px,4vw,54px);background:#eeeae2;color:#0b0a09;box-shadow:0 60px 140px rgba(0,0,0,.6)">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px">
+      <h2 id="ul-legal-title" style="margin:0 0 10px;font-family:Cormorant, Georgia, serif;font-weight:400;font-size:clamp(52px,6vw,96px);line-height:.85;letter-spacing:-.05em">{{ legal.title }}</h2>
+      <button type="button" data-close onClick="{{ closeAll }}" aria-label="Close" style="flex:none;width:52px;height:52px;border-radius:50%;border:1px solid rgba(11,10,9,.3);background:none;cursor:pointer;font-size:24px;color:#0b0a09" style-hover="border-color:#c6311d;color:#c6311d">×</button>
+    </div>
+    <sc-for list="{{ legal.blocks }}" as="b" hint-placeholder-count="3">
+      <h3 style="margin:30px 0 8px;font-family:Cormorant, Georgia, serif;font-weight:500;font-size:30px;line-height:1.1">{{ b.h }}</h3>
+      <sc-for list="{{ b.ps }}" as="para"><p style="margin:0 0 10px;font-size:16px;line-height:1.65;color:#2c2925;white-space:pre-line">{{ para }}</p></sc-for>
+      <sc-if value="{{ b.warn }}"><p style="margin:14px 0 0;padding:14px 18px;border-left:3px solid #c6311d;background:#e3ded4;font-size:16px;line-height:1.6">{{ b.warn }}</p></sc-if>
+    </sc-for>
+  </div>
+</div>
+</sc-if>
+
+<!-- COOKIE -->
+<sc-if value="{{ cookieOpen }}" hint-placeholder-val="{{ false }}">
+<aside aria-label="Cookies" style="position:fixed;z-index:500;left:16px;bottom:16px;width:min(470px,calc(100% - 32px));padding:20px 22px;border-radius:16px;background:linear-gradient(150deg, rgba(36,33,30,.78), rgba(14,13,12,.82));border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(22px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.2), 0 30px 80px rgba(0,0,0,.5)">
+  <p style="margin:0 0 16px;font-size:15px;line-height:1.55;color:#d6d0c6">{{ t.cookieText }}</p>
+  <div style="display:flex;gap:10px;flex-wrap:wrap">
+    <button type="button" onClick="{{ cookieOk }}" style="min-height:46px;padding:0 20px;border-radius:999px;border:1px solid #eeeae2;background:#eeeae2;color:#070707;cursor:pointer;font-size:14px" style-hover="background-color:#f04b37;border-color:#f04b37">{{ t.cookieOk }}</button>
+    <button type="button" onClick="{{ legalCookies }}" style="min-height:46px;padding:0 20px;border-radius:999px;border:1px solid rgba(238,234,226,.4);background:none;cursor:pointer;font-size:14px" style-hover="border-color:#eeeae2">Details</button>
+  </div>
+</aside>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const EASE = 'cubic-bezier(.76,0,.18,1)', EOUT = 'cubic-bezier(.16,1,.3,1)';
+const clamp = (n, a = 0, b = 1) => Math.max(a, Math.min(b, n));
+const H = (mf, sa, so) => { const o = {}; for (let d = 1; d <= 5; d++) o[d] = mf; if (sa) o[6] = sa; if (so) o[0] = so; return o; };
+const SALONS = {
+  at: [
+    { code: '1030 WIEN', name: 'Landstraße', address: 'Landstraßer Hauptstraße 7', city: '1030 Wien', phone: '+4317124377', show: '01 / 712 43 77', email: 'info@gruppalultima.at', hours: 'Mo–Fr 09:00–19:00', h: H([9, 19]) },
+    { code: '1090 WIEN', name: 'Nussdorferstraße', address: 'Nussdorferstraße 29', city: '1090 Wien', phone: '+4313174580', show: '01 / 317 45 80', email: 'g.mayer@gruppalultima.at', hours: 'Mo–Fr 09:00–19:00 · Sa 08:00–13:00', h: H([9, 19], [8, 13]) },
+    { code: '1190 WIEN', name: 'Q19 Döbling', address: 'Grinzingerstraße 112 · Einkaufsquartier Q19', city: '1190 Wien', phone: '+4313707014', show: '01 / 370 70 14', email: 'info@gruppalultima.at', hours: 'Mo–Fr 09:00–19:00 · Sa 09:00–18:00', h: H([9, 19], [9, 18]) },
+    { code: '2700 WIENER NEUSTADT', name: 'Fischapark', address: 'Zehnergürtel 12–24 · Top 143', city: '2700 Wiener Neustadt', phone: '+43262226859', show: '02622 / 26859', email: 'c.hruska@gruppalultima.at', hours: 'Mo–Fr 09:00–19:00 · Sa 09:00–18:00', h: H([9, 19], [9, 18]) },
+    { code: '3430 TULLN', name: 'Tulln', address: 'Rudolfstraße 13', city: '3430 Tulln', phone: '+43227261771', show: '02272 / 61771', email: 'juttafiedler@gmx.at', hours: 'Mo–Mi 09:00–18:00 · Do–Fr 09:00–19:00 · Sa 08:00–14:00', h: { 1: [9, 18], 2: [9, 18], 3: [9, 18], 4: [9, 19], 5: [9, 19], 6: [8, 14] } }
+  ],
+  rs: [
+    { code: '11000 BEOGRAD', name: 'Čubrina', address: 'Čubrina 10 · Stari grad', city: '11000 Beograd', phone: '+381112181566', show: '011 / 218 1566', email: 'gruppalultima@gmail.com', hours: 'Uto–Pet 09:00–20:00 · Sub 09:00–17:00', h: { 2: [9, 20], 3: [9, 20], 4: [9, 20], 5: [9, 20], 6: [9, 17] } }
+  ]
+};
+const PRICES = [
+  { name: 'Damen & Herren', lines: [['GU Special Wash, Cut & Go', '€ 48'], ['Männer · Herrenservice', '€ 48'], ['Maschinenschnitt / Teilschnitt', '€ 29 / 37'], ['Schneiden & Föhnen · kurz / mittel / lang', '€ 65 / 75 / 85']] },
+  { name: 'Föhnen & Styling', lines: [['Waschen & selber Trocknen', '€ 19'], ['Waschen & Föhnen · kurz / mittel / lang', '€ 42 / 49 / 59'], ['Glätteisen / Lockenstab', 'ab € 15'], ['Hochstecken · nach Aufwand', '€ 50 / 80 / 120']] },
+  { name: 'Beauty & Pflege', lines: [['Conditioner & Treatments', '€ 9,50–19'], ['Glossing · Farbauffrischung', 'ab € 25'], ['Augenbrauen färben / zupfen', '€ 9 / 10–19'], ['Wimpern färben', '€ 13']] },
+  { name: 'Farbe & Tönung', lines: [['Ansatz · 40 Gramm', 'ab € 52'], ['Full · 60 Gramm', 'ab € 75'], ['Aufpreis bei Stylist:innen', '€ 19'], ['Hellerfärbung / Blondierung · 40 Gramm', 'ab € 65'], ['Pflanzenfarbe · Ansatz / Full', '€ 65 / 85']] },
+  { name: 'Techniken & Wellen', lines: [['Längen- / Foliensträhnen · Oberkopf', 'ab € 65'], ['Längen- / Foliensträhnen · ganzer Kopf', 'ab € 119'], ['Ombré / Balayage', 'ab € 120'], ['Welle / Umformung · nach Aufwand', '€ 65 / 85']] },
+  { name: 'Kinder', lines: [['Kinderservice bis 12 · kurz / mittel / lang', '€ 38 / 55 / 69'], ['Kinderschnitt trocken bis 4 Jahre', '€ 25']] }
+];
+const DISC = {
+  at: [
+    { name: 'Schnitt', sub: 'Damen & Herren', text: 'Struktur, Fall und Bewegung werden gelesen, bevor der erste Schnitt gesetzt wird.', from: 'ab € 48', img: 'assets/austria-collection.webp', svc: 0 },
+    { name: 'Farbe', sub: 'Farbe & Tönung', text: 'Vom Ansatz bis zur vollständigen Farbe — auf Wunsch mit Pflanzenfarbe.', from: 'ab € 52', img: 'assets/belgrade-couture.webp', svc: 3 },
+    { name: 'Technik', sub: 'Strähnen · Balayage', text: 'Folie, Ombré und Balayage, abgestimmt auf Struktur, Hautton und Licht.', from: 'ab € 65', img: 'assets/austria-editorial.webp', svc: 4 },
+    { name: 'Styling', sub: 'Föhnen & Hochstecken', text: 'Vom präzisen Föhnen bis zur Hochsteckfrisur, die einen ganzen Abend trägt.', from: 'ab € 15', img: 'assets/wien-couture.webp', svc: 1 },
+    { name: 'Pflege', sub: 'Beauty & Pflege', text: 'Treatments, Glossing, Augenbrauen und Wimpern — das Finish nach dem Schnitt.', from: 'ab € 9,50', img: 'assets/belgrade-lineart.webp', svc: 2 }
+  ],
+  rs: [
+    { name: 'Šišanje', sub: 'Žene i muškarci', text: 'Čitamo strukturu, pad i pokret kose pre nego što napravimo prvi rez.', from: 'Cena na upit', img: 'assets/austria-collection.webp', svc: 0 },
+    { name: 'Boja', sub: 'Bojenje i tonovi', text: 'Od izrastka do potpune promene boje, prilagođeno tenu i svetlu.', from: 'Cena na upit', img: 'assets/belgrade-couture.webp', svc: 1 },
+    { name: 'Tehnike', sub: 'Pramenovi · Balayage', text: 'Folije, ombré i balayage, usklađeni sa strukturom vaše kose.', from: 'Cena na upit', img: 'assets/austria-editorial.webp', svc: 2 },
+    { name: 'Styling', sub: 'Feniranje i punđe', text: 'Od preciznog feniranja do svečane frizure koja traje celo veče.', from: 'Cena na upit', img: 'assets/wien-couture.webp', svc: 3 },
+    { name: 'Nega', sub: 'Tretmani', text: 'Profesionalni tretmani i završna nega posle svake usluge.', from: 'Cena na upit', img: 'assets/belgrade-lineart.webp', svc: 3 }
+  ]
+};
+const RS_SVC = [
+  { n: 'Šišanje', p: 'Forma se određuje konsultacijom — prema strukturi kose, licu i željenom rezultatu.' },
+  { n: 'Boja', p: 'Bojenje, tonovi i tehnike posvetljivanja, uz procenu stanja kose.' },
+  { n: 'Nega', p: 'Profesionalni tretmani prilagođeni potrebama kose.' },
+  { n: 'Styling', p: 'Feniranje, lokne i svečane frizure.' }
+];
+const COPY = {
+  at: {
+    navSalons: 'Salons', navServices: 'Preise', navCulture: 'Philosophie', switch: 'Wien / Beograd', book: 'Termin',
+    heroAria: 'Gruppa L’Ultima Österreich', heroKicker: 'Haute Coiffure · Wien · Wiener Neustadt · Tulln',
+    h1a: 'Form wird', h1b: 'Haltung', heroIntro: 'Individuelle Beratung, präzises Handwerk und eine Kultur, die Haar nicht dekoriert, sondern versteht.',
+    heroCta: 'Termin vereinbaren', heroDepth: 'Haute Coiffure',
+    manifestoKicker: 'Manifest', mA: 'Wir folgen keiner Form.', mB: 'Wir finden Ihre.',
+    manifestoText: 'Unsere Top-Stylist:innen lesen Struktur, Bewegung und Persönlichkeit, bevor der erste Schnitt gesetzt wird.',
+    lineAlt: 'Illustration eines Frauenporträts in feiner Linienzeichnung',
+    ringKicker: 'Atelier', ringTitleA: 'Fünf Disziplinen.', ringTitleB: 'Eine Handschrift.', ringCta: 'Preise ansehen',
+    salonTitle: 'Salons.', salonIntro: 'Wählen Sie Ihren Salon. Termine werden telefonisch oder persönlich im jeweiligen Salon vereinbart.',
+    call: 'Anrufen', route: 'Route',
+    servicesTitleA: 'Preise', servicesTitleB: '& Services.',
+    priceNote: 'Preisliste laut offizieller Website, gültig ab Jänner 2024, inkl. 20 % MwSt. Haarbäder sowie Finish- und Stylingprodukte sind enthalten. Schüler:innen und Studierende bis 26 erhalten mit Ausweis 20 % auf Dienstleistungen; ausgenommen GU Specials und Kinderservice. Bitte aktuelle Preise telefonisch bestätigen.',
+    rsSvcTitle: '',
+    cultureKicker: 'Philosophie', cultureWord: 'Individualität', cultureTitleA: 'Individualität ist', cultureTitleB: 'unser Standard.',
+    cultureText: 'Individuelle Leistungsträger arbeiten als motiviertes Team. Kontinuierliche Schulung, konstruktives Feedback und persönliche Weiterentwicklung halten das Handwerk in Bewegung.',
+    cultureAlt: 'Editorial-Porträt mit voluminösem Naturhaar',
+    finalA: 'Ihr Haar.', finalB: 'Unser Zug.', finalText: 'Wählen Sie Ihren Salon und rufen Sie direkt an. Wir freuen uns auf Sie.', bookCta: 'Salon & Termin wählen',
+    bookTitleA: 'Salon', bookTitleB: 'wählen.', bookInfo: 'Terminvereinbarungen sind ausschließlich telefonisch oder persönlich im jeweiligen Salon möglich. Tippen Sie auf einen Salon, um direkt anzurufen.',
+    lImpressum: 'Impressum', lPrivacy: 'Datenschutz', lCookies: 'Cookies', lTerms: 'AGB',
+    cookieText: 'Diese Website verwendet keine Tracking-Cookies. Nur Ihre Regionswahl und die Bestätigung dieses Hinweises werden lokal gespeichert.', cookieOk: 'Verstanden',
+    city: 'Wien', openNow: (n, total) => n === 0 ? 'Alle Salons derzeit geschlossen' : `${n} von ${total} Salons jetzt geöffnet`,
+    openUntil: 'Jetzt geöffnet · bis ', opensToday: 'Öffnet heute um ', closedOpens: 'Geschlossen · öffnet ',
+    days: ['So', 'Mo', 'Di', 'Mi', 'Do', 'Fr', 'Sa'], heroCaps: ['Hochsteckfrisur · Wien', 'Bewegung', 'Farbe · Beograd'],
+    alts: ['Blonde Hochsteckfrisur in skulpturaler Form', 'Langes braunes Haar in Bewegung', 'Dunkles, welliges Haar vor rotem Licht']
+  },
+  rs: {
+    navSalons: 'Salon', navServices: 'Usluge', navCulture: 'Filozofija', switch: 'Wien / Beograd', book: 'Zakaži',
+    heroAria: 'Gruppa L’Ultima Beograd', heroKicker: 'Hair in Motion · Beograd · Čubrina 10',
+    h1a: 'Kosa u', h1b: 'pokretu', heroIntro: 'Individualan pristup, precizan rad i međunarodna kultura frizerskog zanata u srcu Beograda.',
+    heroCta: 'Zakažite termin', heroDepth: 'Hair in Motion',
+    manifestoKicker: 'Manifest', mA: 'Ne pratimo formu.', mB: 'Pronalazimo vašu.',
+    manifestoText: 'Čitamo strukturu, pravac, težinu i svetlost kose pre nego što napravimo prvi rez.',
+    lineAlt: 'Ilustracija ženskog portreta u finom linijskom crtežu',
+    ringKicker: 'Atelje', ringTitleA: 'Pet disciplina.', ringTitleB: 'Jedan rukopis.', ringCta: 'Pogledaj usluge',
+    salonTitle: 'Beograd.', salonIntro: 'Čubrina 10, Stari grad. Termin se dogovara telefonom ili lično u salonu.',
+    call: 'Pozovi', route: 'Mapa',
+    servicesTitleA: 'Naš', servicesTitleB: 'rad.',
+    priceNote: 'Cenovnik za salon u Beogradu nije javno potvrđen i zato ga ne preuzimamo sa austrijske stranice. Za tačnu cenu i procenu pozovite salon.',
+    rsSvcTitle: 'Forma počinje konsultacijom.',
+    cultureKicker: 'Filozofija', cultureWord: 'Individualnost', cultureTitleA: 'Individualnost je', cultureTitleB: 'naš standard.',
+    cultureText: 'Svaki član tima donosi individualno znanje, a rezultat nastaje kroz zajednički standard, kontinuiranu edukaciju i pažnju prema osobi u stolici.',
+    cultureAlt: 'Editorijalni portret sa voluminoznom prirodnom kosom',
+    finalA: 'Vaša kosa.', finalB: 'Naš potez.', finalText: 'Pozovite salon u Čubrinoj i dogovorite termin direktno sa timom.', bookCta: 'Pozovi za termin',
+    bookTitleA: 'Zakažite', bookTitleB: 'termin.', bookInfo: 'Termin se dogovara direktno sa salonom, telefonom ili lično. Dodirnite salon da biste odmah pozvali.',
+    lImpressum: 'Podaci o salonu', lPrivacy: 'Privatnost', lCookies: 'Kolačići', lTerms: 'Uslovi',
+    cookieText: 'Ovaj sajt ne koristi kolačiće za praćenje. Lokalno se čuvaju samo izbor lokacije i potvrda ovog obaveštenja.', cookieOk: 'Razumem',
+    city: 'Beograd', openNow: (n) => n ? 'Salon je sada otvoren' : 'Salon je trenutno zatvoren',
+    openUntil: 'Otvoreno · do ', opensToday: 'Otvara danas u ', closedOpens: 'Zatvoreno · otvara ',
+    days: ['ned', 'pon', 'uto', 'sre', 'čet', 'pet', 'sub'], heroCaps: ['Hair in Motion · Beograd', 'Pokret', 'Forma · Wien'],
+    alts: ['Tamna talasasta kosa ispred crvenog svetla', 'Duga smeđa kosa u pokretu', 'Plava skulpturalna punđa']
+  }
+};
+const LEGAL = {
+  at: {
+    impressum: { title: 'Impressum.', blocks: [
+      { h: 'Medieninhaber und Diensteanbieter', ps: ['Hairstyling Gruppa L´Ultima Frisuren Gesellschaft m.b.H.\nGrinzingerstraße 112, EKZ Q19\n1190 Wien, Österreich', 'E-Mail: info@gruppalultima.at\nTelefon: +43 1 370 70 14'] },
+      { h: 'Unternehmensdaten', ps: ['Firmenbuchnummer: 98047m\nFirmenbuchgericht: Handelsgericht Wien\nBehörde gemäß ECG: Magistratisches Bezirksamt des 19. Bezirkes'] },
+      { h: 'Offenlegung', ps: ['Gegenstand des Unternehmens ist das Friseur- und Hairstyling-Gewerbe. Die Website informiert über Salons, Leistungen, Preise und Karriereangebote der Gruppa L’Ultima.'] }] },
+    privacy: { title: 'Datenschutz.', blocks: [
+      { h: 'Verantwortlicher', ps: ['Hairstyling Gruppa L´Ultima Frisuren Gesellschaft m.b.H., Grinzingerstraße 112, 1190 Wien. Kontakt: info@gruppalultima.at.'] },
+      { h: 'Verarbeitete Daten', ps: ['Diese Website verwendet keine Analyse- oder Marketingdienste. Beim Aufruf können technisch notwendige Server-Logdaten durch den Hosting-Anbieter verarbeitet werden, insbesondere IP-Adresse, Zeitpunkt, angeforderte Datei, Browser und Betriebssystem. Zweck ist die sichere und fehlerfreie Bereitstellung der Website; Rechtsgrundlage ist das berechtigte Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO.'] },
+      { h: 'Kontakt und Termine', ps: ['Telefon- und E-Mail-Links öffnen ausschließlich die entsprechende Anwendung auf Ihrem Gerät. Termine werden nicht über ein Webformular erfasst. E-Mail ist nicht für Terminvereinbarungen vorgesehen. Routen-Links öffnen Google Maps in einem neuen Tab; dabei gelten die Datenschutzbestimmungen von Google.'] },
+      { h: 'Empfänger und Speicherdauer', ps: ['Technische Daten können vom Hosting-Anbieter verarbeitet werden. Logdaten werden nur so lange gespeichert, wie dies für Betrieb, Sicherheit und gesetzliche Pflichten erforderlich ist. Schriften und Bilder werden lokal bereitgestellt.'] },
+      { h: 'Ihre Rechte', ps: ['Sie haben nach der DSGVO insbesondere Rechte auf Auskunft, Berichtigung, Löschung, Einschränkung, Datenübertragbarkeit und Widerspruch. Beschwerden können an die Österreichische Datenschutzbehörde, Barichgasse 40–42, 1030 Wien, gerichtet werden.'] }] },
+    cookies: { title: 'Cookies.', blocks: [
+      { h: 'Keine Tracking-Cookies', ps: ['Diese Website setzt keine Analyse-, Werbe- oder Social-Media-Cookies. Für die Auswahl der Region und die Bestätigung dieses Hinweises werden ausschließlich technisch notwendige Einstellungen im lokalen Speicher Ihres Browsers abgelegt: ultima_region und ultima_cookie_notice.', 'Sie können diese Einträge jederzeit über die Browser-Einstellungen löschen. Externe Inhalte werden nicht automatisch eingebettet.'] }] },
+    terms: { title: 'AGB.', blocks: [
+      { h: 'Geltungsbereich', ps: ['Diese Hinweise regeln die Nutzung der Website. Sie ersetzen keine im Salon vereinbarten Leistungsbedingungen.'] },
+      { h: 'Termine', ps: ['Online kommt kein Vertrag zustande. Termine werden ausschließlich telefonisch oder persönlich im jeweiligen Salon vereinbart. Terminvereinbarungen per E-Mail sind nicht möglich.'] },
+      { h: 'Preise', ps: ['Die veröffentlichten Preise stammen aus der Preisliste mit Gültigkeit ab Jänner 2024, verstehen sich inklusive 20 % Umsatzsteuer und können sich geändert haben. Aufwand, Haarlänge und Materialverbrauch können den Endpreis beeinflussen. Bitte bestätigen Sie den aktuellen Preis im Salon.'] },
+      { h: 'Inhalte und Links', ps: ['Alle Inhalte wurden sorgfältig erstellt; für Aktualität und Vollständigkeit wird keine Gewähr übernommen. Für externe Seiten sind deren Betreiber verantwortlich. Gesetzliche Verbraucherrechte bleiben unberührt.'] }] }
+  },
+  rs: {
+    impressum: { title: 'Podaci o salonu.', blocks: [
+      { h: 'Salon', ps: ['Gruppa L’Ultima Salon Beograd\nČubrina 10\n11000 Beograd, Srbija', 'Email: gruppalultima@gmail.com\nTelefon: +381 11 218 1566'], warn: 'Pre javne objave: potrebno je uneti potvrđeno poslovno ime registrovanog subjekta, sedište, matični broj i PIB. Ovi podaci nisu javno potvrđeni i zato nisu izmišljeni.' }] },
+    privacy: { title: 'Privatnost.', blocks: [
+      { h: 'Rukovalac podacima', ps: ['Gruppa L’Ultima Salon Beograd, Čubrina 10, 11000 Beograd. Kontakt: gruppalultima@gmail.com.'] },
+      { h: 'Koje podatke obrađujemo', ps: ['Sajt ne koristi analitiku, oglašavanje ni marketinško praćenje. Hosting provajder može tehnički obraditi IP adresu, vreme zahteva, traženu datoteku, tip pregledača i operativni sistem radi bezbednog i pouzdanog prikaza sajta.'] },
+      { h: 'Kontakt i zakazivanje', ps: ['Klik na telefon ili email samo otvara odgovarajuću aplikaciju na vašem uređaju. Link za mapu otvara Google Maps u novom prozoru. Sajt ne čuva podatke iz formulara i ne vrši automatsko zakazivanje.'] },
+      { h: 'Prava korisnika', ps: ['U skladu sa Zakonom o zaštiti podataka o ličnosti možete zahtevati pristup, ispravku, brisanje, ograničenje obrade, prenosivost ili uložiti prigovor. Možete se obratiti Povereniku za informacije od javnog značaja i zaštitu podataka o ličnosti.'] }] },
+    cookies: { title: 'Kolačići.', blocks: [
+      { h: 'Bez kolačića za praćenje', ps: ['Sajt ne koristi analitičke, reklamne ni kolačiće društvenih mreža. Izbor lokacije i potvrda ovog obaveštenja čuvaju se kao tehnički neophodne postavke u lokalnom skladištu pregledača: ultima_region i ultima_cookie_notice.', 'Ove podatke možete obrisati kroz podešavanja svog pregledača.'] }] },
+    terms: { title: 'Uslovi.', blocks: [
+      { h: 'Korišćenje sajta', ps: ['Sajt pruža informacije o salonu i ne predstavlja internet prodavnicu. Korišćenjem sajta ne nastaje ugovor o pružanju usluge.'] },
+      { h: 'Zakazivanje', ps: ['Termin se potvrđuje isključivo direktnim dogovorom sa salonom telefonom ili lično. Otvaranje telefonskog ili email linka nije potvrda termina.'] },
+      { h: 'Cene', ps: ['Austrijski cenovnik se ne primenjuje na salon u Beogradu. Za aktuelnu cenu, procenu potrebnog rada i proizvoda obratite se salonu pre usluge.'] },
+      { h: 'Sadržaj', ps: ['Podaci se redovno proveravaju, ali se radno vreme, dostupnost i ponuda mogu promeniti. Zakonska prava potrošača ostaju nepromenjena.'] }] }
+  }
+};
+
+class Component extends DCLogic {
+  state = { loaded: false, gate: false, region: 'at', narrow: false, menu: false, book: false, legal: null, cookie: false, svc: 0, ring: 0, now: Date.now() };
+
+  store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  q(s) { return this.root ? this.root.querySelector(s) : null; }
+  qa(s) { return this.root ? [...this.root.querySelectorAll(s)] : []; }
+
+  componentDidMount() {
+    this.root = document.querySelector('[data-ul="root"]');
+    window.__ul = this;
+    this.reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    this.fine = matchMedia('(pointer: fine)').matches;
+    const saved = this.store('ultima_region');
+    this.setState({ region: saved === 'rs' ? 'rs' : 'at', gate: !saved, narrow: innerWidth < 1100 });
+    this.m = { x: 0, y: 0, tx: 0, ty: 0, px: innerWidth * .7, py: innerHeight * .45, lx: innerWidth * .7, ly: innerHeight * .4, cx: -100, cy: -100, s: 1, ts: 1, moved: false };
+    this.onMove = e => { const m = this.m; m.px = e.clientX; m.py = e.clientY; m.tx = e.clientX / innerWidth - .5; m.ty = e.clientY / innerHeight - .5; if (!m.moved && this.fine && !this.reduced) { m.cx = m.px; m.cy = m.py; const c = this.q('[data-cursor]'); if (c) c.style.opacity = '1'; } m.moved = true; };
+    this.onOver = e => { this.m.ts = e.target.closest && e.target.closest('a,button') ? 1.9 : 1; };
+    this.onResize = () => { this.scenes = null; const n = innerWidth < 1100; if (n !== this.state.narrow) this.setState({ narrow: n }); };
+    this.onKey = e => { if (e.key === 'Escape') this.closeAll(); };
+    addEventListener('pointermove', this.onMove, { passive: true });
+    addEventListener('pointerover', this.onOver, { passive: true });
+    addEventListener('resize', this.onResize);
+    addEventListener('keydown', this.onKey);
+    this.clock = setInterval(() => this.setState({ now: Date.now() }), 15000);
+    if (/Chrome\//.test(navigator.userAgent)) { const l = this.q('[data-lens]'); if (l) l.style.backdropFilter = 'url(#ul-liquid) blur(1.5px) saturate(1.7) brightness(1.15)'; }
+    
+    this.last = performance.now();
+    this.raf = requestAnimationFrame(this.tick);
+    this.runLoader();
+    this.arm();
+    if (!this.store('ultima_cookie_notice')) this.cookieT = setTimeout(() => this.setState({ cookie: true }), 5200);
+  }
+  componentWillUnmount() {
+    cancelAnimationFrame(this.raf); clearInterval(this.clock); clearTimeout(this.cookieT);
+    removeEventListener('pointermove', this.onMove); removeEventListener('pointerover', this.onOver);
+    removeEventListener('resize', this.onResize); removeEventListener('keydown', this.onKey);
+    if (this.io) this.io.disconnect();
+    document.documentElement.style.overflow = '';
+  }
+  componentDidUpdate(pp, ps) {
+    const s = this.state;
+    document.documentElement.style.overflow = (!s.loaded || s.gate || s.book || s.legal || s.menu) ? 'hidden' : '';
+    this.scenes = null;
+    document.documentElement.lang = s.region === 'at' ? 'de-AT' : 'sr-Latn';
+    document.title = s.region === 'at' ? 'Gruppa L’Ultima — Haute Coiffure Wien · Wiener Neustadt · Tulln' : 'Gruppa L’Ultima Beograd — Čubrina 10';
+    this.arm();
+    if (ps.svc !== s.svc || ps.region !== s.region) this.staggerLines();
+    if ((s.book && !ps.book) || (s.legal && !ps.legal)) {
+      this.lastFocus = document.activeElement;
+      requestAnimationFrame(() => {
+        const d = this.q('[data-dialog]'), c = this.q('[data-close]');
+        if (c) c.focus();
+        if (d && !this.reduced) d.animate([{ opacity: 0, transform: 'translate3d(0,40px,0) scale(.97)' }, { opacity: 1, transform: 'none' }], { duration: 700, easing: EOUT });
+        this.qa('[data-bookopt]').forEach((el, i) => !this.reduced && el.animate([{ opacity: 0, transform: 'translate3d(0,20px,0)' }, { opacity: 1, transform: 'none' }], { duration: 700, delay: 120 + i * 60, easing: EOUT, fill: 'both' }));
+      });
+    }
+    if ((!s.book && ps.book) || (!s.legal && ps.legal)) { if (this.lastFocus && this.lastFocus.focus) this.lastFocus.focus(); }
+    if (s.gate && !ps.gate && s.loaded) requestAnimationFrame(() => this.gateIntro());
+  }
+
+  runLoader() {
+    const L = this.q('[data-loader]'), num = this.q('[data-load-num]'), bar = this.q('[data-load-bar]');
+    let fired = false;
+    const done = () => { if (fired) return; fired = true; this.setState({ loaded: true }, () => { if (this.state.gate) this.gateIntro(); else this.intro(); }); };
+    if (!L) return done();
+    const dur = this.reduced ? 250 : 1600, t0 = performance.now();
+    if (!this.reduced) {
+      const l = this.q('[data-load-word="l"]'), r = this.q('[data-load-word="r"]');
+      l && l.animate([{ transform: 'translate3d(-40vw,0,0)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1300, easing: EASE, fill: 'both' });
+      r && r.animate([{ transform: 'translate3d(40vw,0,0)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1300, easing: EASE, fill: 'both' });
+    }
+    const step = now => {
+      const k = Math.min(1, (now - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      if (num) num.textContent = String(Math.round(e * 100)).padStart(3, '0');
+      if (bar) bar.style.transform = `scaleX(${e})`;
+      if (k < 1) return requestAnimationFrame(step);
+      const a = L.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 0 100% 0)' }], { duration: this.reduced ? 10 : 1000, delay: 150, easing: EASE, fill: 'forwards' });
+      a.onfinish = done;
+    };
+    requestAnimationFrame(step);
+    setTimeout(done, 3600);
+  }
+  gateIntro() {
+    if (this.reduced) return;
+    this.qa('[data-gate-img]').forEach((el, i) => el.animate([{ transform: 'scale(1.25)', opacity: 0 }, { transform: 'scale(1)', opacity: 1 }], { duration: 1800, delay: i * 140, easing: EOUT, fill: 'both' }));
+    this.qa('[data-gate-label]').forEach((el, i) => el.animate([{ transform: 'translate3d(0,60px,0)', opacity: 0 }, { transform: 'none', opacity: 1 }], { duration: 1200, delay: 350 + i * 140, easing: EOUT, fill: 'both' }));
+  }
+  intro() {
+    if (this.reduced) return;
+    this.qa('[data-letter]').forEach((el, i) => el.animate([{ transform: 'translate3d(0,115%,0) rotate(7deg)' }, { transform: 'none' }], { duration: 1400, delay: 80 + i * 42, easing: EOUT, fill: 'both' }));
+    this.qa('[data-intro]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translate3d(0,26px,0)' }, { opacity: 1, transform: 'none' }], { duration: 1200, delay: 650 + i * 130, easing: EOUT, fill: 'both' }));
+    this.qa('[data-plane-img]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'scale(1.18)', filter: 'blur(14px)' }, { opacity: 1, transform: 'scale(1)', filter: 'blur(0px)' }], { duration: 2000, delay: i * 180, easing: EOUT, fill: 'both' }));
+  }
+  enter(r) {
+    if (this.entering) return; this.entering = true;
+    this.store('ultima_region', r);
+    this.setState({ region: r });
+    const g = this.q('[data-gate]');
+    const finish = () => { this.entering = false; this.setState({ gate: false }, () => { scrollTo(0, 0); this.intro(); }); };
+    if (!g || this.reduced) return finish();
+    if (!this.state.narrow) this.qa('[data-enter]').forEach(p => p.animate([{ flexGrow: getComputedStyle(p).flexGrow, flexBasis: '440px' }, { flexGrow: p.dataset.enter === r ? 1 : 0, flexBasis: p.dataset.enter === r ? '440px' : '0px' }], { duration: 950, easing: EASE, fill: 'forwards' }));
+    setTimeout(() => { g.animate([{ clipPath: 'inset(0 0 0 0)' }, { clipPath: 'inset(0 0 100% 0)' }], { duration: 1000, easing: EASE, fill: 'forwards' }).onfinish = finish; }, this.state.narrow ? 150 : 700);
+  }
+
+  arm() {
+    if (!this.root) return;
+    if (!this.io) this.io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting && e.target.__rv) { e.target.__rv.play(); this.io.unobserve(e.target); } }), { threshold: .14, rootMargin: '0px 0px -6% 0px' });
+    this.qa('[data-reveal]').forEach(el => {
+      if (el.__rv || this.reduced) return;
+      const kind = el.dataset.reveal, d = (+el.dataset.d || 0) * 110;
+      const kf = kind === 'mask' ? [{ transform: 'translate3d(0,108%,0)' }, { transform: 'none' }]
+        : kind === 'line' ? [{ transform: 'scaleX(0)' }, { transform: 'scaleX(1)' }]
+        : [{ opacity: 0, transform: 'translate3d(0,34px,0)' }, { opacity: 1, transform: 'none' }];
+      const a = el.animate(kf, { duration: kind === 'rise' ? 1100 : 1400, delay: d, easing: EOUT, fill: 'both' });
+      a.pause(); a.currentTime = 0; el.__rv = a; this.io.observe(el);
+    });
+    if (this.reduced) return;
+    this.qa('[data-marquee]').forEach(el => { if (!el.__lp) el.__lp = el.animate([{ transform: 'translate3d(0,0,0)' }, { transform: 'translate3d(-50%,0,0)' }], { duration: 46000, iterations: Infinity }); });
+    this.qa('[data-pulse]').forEach(el => { if (!el.__lp) el.__lp = el.animate([{ transform: 'scale(1)', opacity: .8 }, { transform: 'scale(3.2)', opacity: 0 }], { duration: 2000, iterations: Infinity, easing: 'cubic-bezier(.2,.6,.3,1)' }); });
+    this.qa('[data-aurora]').forEach(el => {
+      if (el.__lp) return; const v = +el.dataset.aurora;
+      const kf = v === 1 ? [{ transform: 'translate3d(0,0,0) scale(1)' }, { transform: 'translate3d(-8vw,-6vw,0) scale(1.25)' }]
+        : v === 2 ? [{ transform: 'translate3d(0,0,0) scale(1)' }, { transform: 'translate3d(14vw,8vw,0) scale(.85)' }]
+        : [{ transform: 'translate3d(0,0,0) scale(1.1)' }, { transform: 'translate3d(-12vw,-10vw,0) scale(.9)' }];
+      el.__lp = el.animate(kf, { duration: 14000 + v * 4000, iterations: Infinity, direction: 'alternate', easing: 'ease-in-out' });
+    });
+  }
+  staggerLines() {
+    if (this.reduced) return;
+    requestAnimationFrame(() => this.qa('[data-pline]').forEach((el, i) => el.animate([{ opacity: 0, transform: 'translate3d(0,18px,0)' }, { opacity: 1, transform: 'none' }], { duration: 800, delay: i * 55, easing: EOUT, fill: 'both' })));
+  }
+
+  tick = now => {
+    this.raf = requestAnimationFrame(this.tick);
+    if (!this.root) return;
+    const dt = Math.min(64, now - this.last); this.last = now;
+    const k = this.reduced ? 1 : 1 - Math.pow(.88, dt / 16.67), vh = innerHeight, m = this.m;
+    if (!this.scenes) this.scenes = this.qa('[data-scene]');
+    for (const el of this.scenes) {
+      const r = el.getBoundingClientRect();
+      const F = window.__ulForce && window.__ulForce[el.dataset.scene];
+      const tp = F != null ? F : clamp(-r.top / Math.max(1, r.height - vh)), tt = F != null ? F : clamp((vh - r.top) / (vh + r.height));
+      const c = el.__c || (el.__c = { p: tp, t: tt, wp: -1 });
+      c.p += (tp - c.p) * k; c.t += (tt - c.t) * k;
+      if (Math.abs(tp - c.p) < 1e-4) c.p = tp;
+      el.style.setProperty('--p', c.p.toFixed(4)); el.style.setProperty('--t', c.t.toFixed(4));
+      const sc = el.dataset.scene;
+      if (sc === 'manifesto' && Math.abs(c.wp - c.p) > 1e-4) {
+        c.wp = c.p; const ws = el.querySelectorAll('[data-word]'), n = ws.length;
+        ws.forEach((w, i) => { const o = clamp((c.p - .16) * 1.9 * n - i); w.style.opacity = (.13 + .87 * o).toFixed(3); w.style.transform = `translate3d(0,${((1 - o) * .12).toFixed(3)}em,0)`; });
+      }
+      if (sc === 'ring') {
+        const s = clamp(c.p * 1.12 - .06) * 4, f = s - Math.floor(s), e = f * f * f * (f * (f * 6 - 15) + 10), st = Math.min(4, Math.floor(s) + e);
+        const ang = -st * 72; el.style.setProperty('--ang', ang.toFixed(3));
+        el.querySelectorAll('[data-card]').forEach((card, i) => { let a = ((i * 72 + ang) % 360 + 540) % 360 - 180; const cs = Math.cos(a * Math.PI / 180); card.style.opacity = (.18 + .82 * clamp(cs)).toFixed(3); card.style.filter = `brightness(${(.45 + .55 * clamp(cs)).toFixed(3)})`; card.tabIndex = Math.abs(a) < 36 ? 0 : -1; });
+        const idx = Math.min(4, Math.round(st)); if (idx !== this.state.ring) this.setState({ ring: idx });
+      }
+    }
+    if (this.fine && !this.reduced) { m.x += (m.tx - m.x) * k * .6; m.y += (m.ty - m.y) * k * .6; }
+    else if (!this.reduced) { const T = now / 1000; m.x = Math.sin(T * .35) * .22; m.y = Math.cos(T * .27) * .16; }
+    this.root.style.setProperty('--mx', m.x.toFixed(4)); this.root.style.setProperty('--my', m.y.toFixed(4));
+    const lens = this.q('[data-lens]');
+    if (lens) {
+      const T = now / 1000, auto = !m.moved || !this.fine;
+      const gx = auto ? innerWidth * (.62 + Math.sin(T * .4) * .12) : m.px + 60, gy = auto ? vh * (.35 + Math.cos(T * .33) * .1) : m.py - 160;
+      const dx = gx - m.lx, dy = gy - m.ly; m.lx += dx * k * .22; m.ly += dy * k * .22;
+      lens.style.transform = `translate3d(${m.lx.toFixed(1)}px,${m.ly.toFixed(1)}px,0) rotate(${(clamp(dx / 30, -12, 12) + 8).toFixed(2)}deg)`;
+    }
+    const cur = this.q('[data-cursor]');
+    if (cur && this.fine && !this.reduced) { m.cx += (m.px - m.cx) * k * 1.4; m.cy += (m.py - m.cy) * k * 1.4; m.s += (m.ts - m.s) * k; cur.style.transform = `translate3d(${m.cx.toFixed(1)}px,${m.cy.toFixed(1)}px,0) scale(${m.s.toFixed(3)})`; }
+    if (this.fine && !this.reduced) this.qa('[data-magnet]').forEach(el => {
+      const r = el.getBoundingClientRect(), ox = el.__mx || 0, oy = el.__my || 0, cx = r.left + r.width / 2 - ox, cy = r.top + r.height / 2 - oy;
+      const dx = m.px - cx, dy = m.py - cy, near = Math.hypot(dx, dy) < Math.max(r.width, r.height) * .9;
+      el.__mx = ox + ((near ? dx * .28 : 0) - ox) * k; el.__my = oy + ((near ? dy * .34 : 0) - oy) * k;
+      el.style.transform = `translate3d(${el.__mx.toFixed(2)}px,${el.__my.toFixed(2)}px,0)`;
+    });
+    const pb = this.q('[data-progress]'), max = document.documentElement.scrollHeight - vh;
+    if (pb) pb.style.transform = `scaleX(${clamp(scrollY / Math.max(1, max)).toFixed(4)})`;
+  };
+
+  tz() { return this.state.region === 'at' ? 'Europe/Vienna' : 'Europe/Belgrade'; }
+  nowParts() {
+    const p = new Intl.DateTimeFormat('en-GB', { timeZone: this.tz(), weekday: 'short', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).formatToParts(new Date(this.state.now));
+    const g = t => (p.find(x => x.type === t) || {}).value;
+    return { wd: { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 }[g('weekday')], h: +g('hour'), m: +g('minute') };
+  }
+  status(s, T, np) {
+    const fmt = h => String(Math.floor(h)).padStart(2, '0') + ':' + String(Math.round((h % 1) * 60)).padStart(2, '0');
+    const cur = np.h + np.m / 60, today = s.h[np.wd];
+    if (today && cur >= today[0] && cur < today[1]) return { open: true, closed: false, label: T.openUntil + fmt(today[1]) };
+    if (today && cur < today[0]) return { open: false, closed: true, label: T.opensToday + fmt(today[0]) };
+    for (let i = 1; i <= 7; i++) { const d = (np.wd + i) % 7; if (s.h[d]) return { open: false, closed: true, label: T.closedOpens + T.days[d] + ' ' + fmt(s.h[d][0]) }; }
+    return { open: false, closed: true, label: '' };
+  }
+  goServices(i) {
+    this.setState({ svc: i });
+    const el = document.getElementById('services'); if (!el) return;
+    scrollTo({ top: el.getBoundingClientRect().top + scrollY, behavior: this.reduced ? 'auto' : 'smooth' });
+  }
+  closeAll = () => this.setState({ book: false, legal: null, menu: false });
+
+  renderVals() {
+    const s = this.state, r = s.region, at = r === 'at', T = COPY[r], np = this.nowParts();
+    const salons = SALONS[r].map(x => ({ ...x, ...this.status(x, T, np), tel: 'tel:' + x.phone, map: 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(x.address.split(' · ')[0] + ', ' + x.city) }));
+    const open = salons.filter(x => x.open).length;
+    const disc = DISC[r].map((d, i) => ({ ...d, pick: () => this.goServices(at ? d.svc : 0) }));
+    const heroSrc = at ? ['assets/wien-couture.webp', 'assets/austria-collection.webp', 'assets/belgrade-couture.webp'] : ['assets/belgrade-couture.webp', 'assets/austria-collection.webp', 'assets/wien-couture.webp'];
+    const svc = PRICES[s.svc] || PRICES[0];
+    const legal = s.legal ? LEGAL[r][s.legal] : { title: '', blocks: [] };
+    const words = str => str.split(' ');
+    return {
+      t: T, isAt: at, isRs: !at, narrow: s.narrow, wide: !s.narrow, gate: s.gate, showLoader: !s.loaded,
+      seamOpacity: s.narrow ? 0 : 1, menuOpen: s.menu, bookOpen: s.book, legalOpen: !!s.legal, cookieOpen: s.cookie,
+      h1a: [...T.h1a], h1b: [...T.h1b], mWordsA: words(T.mA), mWordsB: words(T.mB),
+      hero: { a: heroSrc[0], b: heroSrc[1], c: heroSrc[2], aAlt: T.alts[0], bAlt: T.alts[1], cAlt: T.alts[2], aCap: T.heroCaps[0], bCap: T.heroCaps[1], cCap: T.heroCaps[2] },
+      d0: disc[0], d1: disc[1], d2: disc[2], d3: disc[3], d4: disc[4], dA: disc[s.ring] || disc[0],
+      ringDots: disc.map((d, i) => ({ on: i === s.ring, off: i !== s.ring })),
+      salons, anyOpen: open > 0, noneOpen: open === 0, openSummary: T.openNow(open, salons.length),
+      clock: String(np.h).padStart(2, '0') + ':' + String(np.m).padStart(2, '0'), cityName: T.city,
+      cityClock: T.city + ' ' + String(np.h).padStart(2, '0') + ':' + String(np.m).padStart(2, '0'),
+      svc: { name: svc.name, lines: svc.lines.map(l => ({ n: l[0], p: l[1] })) },
+      svcTabs: PRICES.map((p, i) => ({ name: p.name, active: i === s.svc, idle: i !== s.svc, select: () => this.setState({ svc: i }) })),
+      rsSvc: RS_SVC, legal, year: new Date(s.now).getFullYear(),
+      enterAt: () => this.enter('at'), enterRs: () => this.enter('rs'),
+      openGate: () => this.setState({ gate: true, menu: false }),
+      openBook: () => this.setState({ book: true, menu: false }),
+      toggleMenu: () => this.setState({ menu: !s.menu }), closeMenu: () => this.setState({ menu: false }),
+      closeAll: this.closeAll, backdropClose: e => { if (e.target === e.currentTarget) this.closeAll(); },
+      legalImpressum: () => this.setState({ legal: 'impressum' }), legalPrivacy: () => this.setState({ legal: 'privacy' }),
+      legalCookies: () => this.setState({ legal: 'cookies', cookie: false }), legalTerms: () => this.setState({ legal: 'terms' }),
+      cookieOk: () => { this.store('ultima_cookie_notice', '1'); this.setState({ cookie: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
